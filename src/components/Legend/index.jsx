@@ -1,5 +1,4 @@
 import React  from 'react'
-
 import * as S from './styles';
 
 export default function Legend(){
@@ -18,8 +17,6 @@ export default function Legend(){
                 <S.Seat />
                 Indisponivel
             </S.Title>
-
-
         </S.Wrapper>
         )
 }

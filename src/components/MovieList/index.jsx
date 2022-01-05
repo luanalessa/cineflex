@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { MovieContext } from '../../providers/MovieProvider';
 import { Link } from "react-router-dom";
 
-
 import * as S from './styles';
 
 export default function MovieList() {
@@ -12,11 +11,10 @@ export default function MovieList() {
     <S.Container>
       <S.Title>Selecione o filme</S.Title>
       { movies.map(movie => 
-            <Link to={`/sessoes/${movie.id}`}>
-              <S.MovieCard onClick={() => getSessions(movie.id) } poster={movie.posterURL}/>
-            </Link>
-
-            ) }
+        <Link to={`/sessoes/${movie.id}`}>
+          <S.MovieCard onClick={() => getSessions(movie.id) } poster={movie.posterURL}/>
+        </Link>
+      )}
     </S.Container>
   )
 }

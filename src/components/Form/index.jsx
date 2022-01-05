@@ -2,24 +2,23 @@ import React, { useContext, useState } from 'react'
 import { useNavigate  } from "react-router-dom";
 import { MovieContext } from '../../providers/MovieProvider';
 
-
 import * as S from './styles';
 
 export default function Form() {
   const { order, sendOrder} = useContext(MovieContext);
-  const [name, setName] = useState();
-  const [document, setDocument] = useState();
+  const [name, setName] = useState(false);
+  const [document, setDocument] = useState(false);
   const history = useNavigate();
 
   const handleSuccess = () => {
-    if((order.seats).length === 0){
+    if((order.seats).length === 0 ) {
       alert("Nenhum assento selecionado!")
+    }else if(name === false || document === false){
+      alert("Informe seus dados")
     }else{
       sendOrder(name, document)
       history('/sucesso');
     }
-    
-    console.log(order.seats)
   }
 
   return (

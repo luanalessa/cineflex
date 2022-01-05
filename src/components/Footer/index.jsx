@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { MovieContext } from '../../providers/MovieProvider';
 import * as S from './styles';
 
@@ -7,13 +7,17 @@ export default function Footer( ){
 
     return (
         <S.SessionFooter>
-        { order.movie ?  <><S.MoviePoster poster={order.movie.posterURL}/>
-        <S.MovieTitle>
-            {order.movie.title}
-            <br/>
-            {order.session}    
-        </S.MovieTitle>     </>   : null  }
+        { order.movie ?  
+            <>
+                <S.MoviePoster poster={order.movie.posterURL}/>
+                <S.MovieTitle>
+                    {order.movie.title}
+                    <br/>
+                    {order.session}    
+                </S.MovieTitle>     
+            </>   
+            : null  
+        }
         </S.SessionFooter>
-        
         )
 }

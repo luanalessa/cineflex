@@ -22,16 +22,12 @@ export default function Header() {
   }
  
   return (
-  
     <S.HeaderBar>
       { location.pathname !== '/' && location.pathname !== '/sucesso' ? 
           <img src={Back} alt=""  onClick={() => lastLocation()} />
         : null
     }
-      
       <S.Title>CINEFLEX</S.Title>
-
-
     </S.HeaderBar>
 
 

@@ -10,11 +10,11 @@ export default function Seats() {
  
   return (
     <>
-    <Header />
-    <MovieSeats />
-    <Legend />
-    <Form />
-    <Footer />
+      <Header />
+      <MovieSeats />
+      <Legend />
+      <Form />
+      <Footer />
     </>
   )
 }

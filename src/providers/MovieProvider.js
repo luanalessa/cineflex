@@ -10,7 +10,6 @@ export const MovieProvider = ({ children }) => {
     const [order, setOrder] = useState({ movie: null, session: null, seats: []});
     const [success, setSuccess] = useState(false);
 
-
     useEffect(()=>{
       axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/movies')
         .then(response => {setMovies(response.data)})
@@ -31,20 +30,16 @@ export const MovieProvider = ({ children }) => {
         .then(response => {
           setSeats(response.data.seats)
           setOrder({...order, session: `${response.data.name}  ${response.data.day.weekday}`})
-
         })
     }
 
-    const selectSeats = (seatId, isSelected) => {
+    const selectSeats = (seatId) => {
       let seat = order.seats;
-
       if(seat.indexOf(seatId) === -1){
-        seat.push(seatId)
-        
+        seat.push(seatId)  
       }else{
         seat.splice(seat.indexOf(seatId),1)
       }
-
       return seat
     }
 
@@ -61,8 +56,6 @@ export const MovieProvider = ({ children }) => {
     const newOrder = () => {
       setSuccess(false);
       setOrder({ movie: null, session: null, seats: []})
-      console.log(success)
-
     }
 
   return (
@@ -80,7 +73,7 @@ export const MovieProvider = ({ children }) => {
         setOrder, 
         sendOrder,
         newOrder}} 
-        >
+    >
       {children}
     </MovieContext.Provider>
   )
