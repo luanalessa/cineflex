@@ -1,13 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import Header from '../../components/Header';
 import MovieSeats from '../../components/MovieSeats';
 import Footer from '../../components/Footer';
 import Legend from '../../components/Legend';
-
-
-import { MovieContext } from '../../providers/MovieProvider';
-
+import Form from '../../components/Form';
 
 export default function Seats() {
  
@@ -16,6 +13,7 @@ export default function Seats() {
     <Header />
     <MovieSeats />
     <Legend />
+    <Form />
     <Footer />
     </>
   )

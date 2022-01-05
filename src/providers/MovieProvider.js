@@ -8,6 +8,8 @@ export const MovieProvider = ({ children }) => {
     const [sessions, setSessions] = useState([]);
     const [seats, setSeats] = useState([]);
     const [order, setOrder] = useState({ movie: null, session: null, seats: []});
+    const [success, setSuccess] = useState(false);
+
 
     useEffect(()=>{
       axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/movies')
@@ -29,14 +31,12 @@ export const MovieProvider = ({ children }) => {
         .then(response => {
           setSeats(response.data.seats)
           setOrder({...order, session: `${response.data.name}  ${response.data.day.weekday}`})
-          console.log(order)
 
         })
     }
 
     const selectSeats = (seatId, isSelected) => {
       let seat = order.seats;
-      console.log(seat.indexOf(seatId))
 
       if(seat.indexOf(seatId) === -1){
         seat.push(seatId)
@@ -45,19 +45,42 @@ export const MovieProvider = ({ children }) => {
         seat.splice(seat.indexOf(seatId),1)
       }
 
-      order.seats = seat
-      console.log(seatId, order.seats)
+      return seat
     }
 
-    // const handleOrder = (key, value) => {
-    //   if(key === 'session ') setOrder({...order, session : value})
-    //   else if( key === 'movie') setOrder({...order, movie : value})
-    //   else setOrder({...order, seats : value})
-    // }
+    const sendOrder = (userName, userDocument) => {
+      const userOrder = { ids : order.seats, name : userName, cpf: userDocument}
+      order.buyer = [userName, userDocument];
+      axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many", userOrder)
+        .then( response => setSuccess(true))
+        .catch( e =>  setSuccess(false))
+
+        console.log(success)
+    }
+
+    const newOrder = () => {
+      setSuccess(false);
+      setOrder({ movie: null, session: null, seats: []})
+      console.log(success)
+
+    }
 
   return (
     <MovieContext.Provider
-      value={{ order, movies, sessions, seats, getSessions, getSeats, selectSeats}} >
+      value={{ 
+        success, 
+        setSuccess, 
+        order, 
+        movies, 
+        sessions, 
+        seats, 
+        getSessions, 
+        getSeats, 
+        selectSeats, 
+        setOrder, 
+        sendOrder,
+        newOrder}} 
+        >
       {children}
     </MovieContext.Provider>
   )

@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
-import { MovieContext } from '../../providers/MovieProvider';
+import React  from 'react'
+
 import * as S from './styles';
 
-export default function Subtitles(){
+export default function Legend(){
 
     return (
         <S.Wrapper>

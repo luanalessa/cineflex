@@ -9,14 +9,23 @@ export const HeaderBar = styled.header`
     top: 0px;
 
     background: #C3CFD9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img{
+        position: absolute;
+        width: 25px;
+        top: 20px;
+        left: 10px;
+        cursor: pointer;
+    }
+
 `
 
 export const Title = styled.span`
     width: 375px;
     height: 67px;
-
-    margin: 0 auto;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;

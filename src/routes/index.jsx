@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home'
 import Session from '../pages/Session'
 import Seats from '../pages/Seats'
-// import Success from '../pages/Success'
+import Success from '../pages/Success'
 
 export default function Router() {
     return (
@@ -13,7 +13,7 @@ export default function Router() {
                 <Route path='/' element={<Home/>}  />
                 <Route path='/sessoes/:MovieId' element={<Session/>} />
                 <Route path="/assentos/:SessionId" element={<Seats/>} />
-                {/*<Route path="/sucesso" element={Success} /> */}
+                <Route path='/sucesso' element={<Success/>} />
             </Routes>
         </BrowserRouter>
         )
