@@ -6,7 +6,7 @@ import { MovieContext } from '../../providers/MovieProvider';
 import * as S from './styles';
 
 export default function Form() {
-  const {success, order, sendOrder} = useContext(MovieContext);
+  const { order, sendOrder} = useContext(MovieContext);
   const [name, setName] = useState();
   const [document, setDocument] = useState();
   const history = useNavigate();

@@ -1,4 +1,4 @@
-import React, { useContext, useState,useEffect } from 'react'
+import React, { useContext, useState } from 'react'
 import { MovieContext } from '../../providers/MovieProvider';
 
 
@@ -6,9 +6,7 @@ import * as S from './styles';
 
 export default function MovieSeats() {
   const { order, selectSeats, seats } = useContext(MovieContext);
-  const [isSelected, setIsSelected] = useState([]);
-
-  console.log(seats)
+  const [ setIsSelected] = useState([]);
   
   const addSeats = (id) => {
     selectSeats(id)
