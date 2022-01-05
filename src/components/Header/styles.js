@@ -13,6 +13,7 @@ export const HeaderBar = styled.header`
     align-items: center;
     justify-content: center;
 
+    z-index: 1;
     img{
         position: absolute;
         width: 25px;
