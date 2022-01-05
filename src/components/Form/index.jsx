@@ -13,7 +13,7 @@ export default function Form() {
   const handleSuccess = () => {
     if((order.seats).length === 0 ) {
       alert("Nenhum assento selecionado!")
-    }else if(name === false || document === false){
+    }else if(!name  || !document ){
       alert("Informe seus dados")
     }else{
       sendOrder(name, document)
