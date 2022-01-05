@@ -15,7 +15,6 @@
 - [ReactJS](https://reactjs.org/)
 - [Axios](https://www.typescriptlang.org/)
 - [styled-components](https://styled-components.com//)
-- [React Modal](https://axios-http.com/docs/intro)
 
 </br>
 
