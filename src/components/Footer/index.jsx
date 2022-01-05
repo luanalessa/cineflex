@@ -11,7 +11,7 @@ export default function Footer(){
         <S.MovieTitle>
             {order.movie.title}
             <br/>
-            {order?.session ? order.session : null}    
+            {order.session ? order.session : null}    
         </S.MovieTitle>         
         </S.SessionFooter>)
 }
