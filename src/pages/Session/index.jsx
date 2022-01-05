@@ -2,6 +2,7 @@ import React from 'react'
 
 import Header from '../../components/Header';
 import MovieSession from '../../components/MovieSession';
+import Footer from '../../components/Footer';
 
 
 export default function Session() {
@@ -10,7 +11,7 @@ export default function Session() {
     <>
     <Header />
     <MovieSession />
-
+    <Footer />
     </>
   )
 }

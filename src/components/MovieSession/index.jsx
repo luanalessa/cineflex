@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 import * as S from './styles';
 
 export default function MovieSession() {
-  const { sessions } = useContext(MovieContext);
-  console.log(sessions)
+  const { sessions, getSeats } = useContext(MovieContext);
   
   return (
     <S.Container>
@@ -17,7 +16,9 @@ export default function MovieSession() {
              <>
                 <S.Days>{session.weekday} - {session.date}</S.Days>
                 {(session.showtimes).map(showtime => 
-                  <S.Time>{showtime.name}</S.Time>
+                  <Link to={`/assentos/${showtime.id}`}>
+                    <S.Time onClick={() =>  getSeats(showtime.id)} >{showtime.name}</S.Time>
+                  </Link>
                 )}
             </>
             
