@@ -23,7 +23,7 @@ export default function MovieSeats() {
           key= {seat.id}
           isAvailable={seat.isAvailable} 
           isSelected = {(order.seats).indexOf(seat.id) === -1 ? false : true} 
-          onClick={() => seat.isAvailable ? addSeats(seat.id) : null}
+          onClick={() => seat.isAvailable ? addSeats(seat.id) : alert("Assento ocupado!")}
             >
               {seat.name}
             </S.Seat> 

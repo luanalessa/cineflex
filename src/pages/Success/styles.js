@@ -12,11 +12,13 @@ export const Container =  styled.div`
 
     justify-content: center;
 
+
 `
 export const Wrapper =  styled.div`
   width: 400px;
-  height: 400px;
+  height: auto;
   margin: 0 auto;
+
 `
 
 export const Label = styled.label`
@@ -37,7 +39,7 @@ export const Label = styled.label`
 
   color: #247A6B;
 
-  margin: 50px auto;
+  margin: 0px auto;
   margin-top: 50px;
 `
 
@@ -56,7 +58,7 @@ export const Title = styled.span`
 
   color: #293845;
 
-  margin-top: 30px;
+  margin-top: 10px;
 
 `
 

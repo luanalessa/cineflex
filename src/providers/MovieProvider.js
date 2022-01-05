@@ -49,13 +49,13 @@ export const MovieProvider = ({ children }) => {
     }
 
     const sendOrder = (userName, userDocument) => {
-      const userOrder = { ids : order.seats, name : userName, cpf: userDocument}
-      order.buyer = [userName, userDocument];
-      axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many", userOrder)
-        .then( response => setSuccess(true))
-        .catch( e =>  setSuccess(false))
-
-        console.log(success)
+      if(order.seats.length > 0){
+        const userOrder = { ids : order.seats, name : userName, cpf: userDocument}
+        order.buyer = [userName, userDocument];
+        axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many", userOrder)
+          .then( response => setSuccess(true))
+          .catch( e =>  setSuccess(false))
+      }
     }
 
     const newOrder = () => {
